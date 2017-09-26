@@ -91,7 +91,17 @@ summarise(mean_wind = mean(wind))
 
 
 
-
+##mutate() adds ne columns and 
+Lets calculate  body mass index for starwars characters:
+´´´´´{r}
+starwars %>%
+mutate(bmi= mass/height/100) 2 %>%
+select(1:3, bmi) %>%
+filter(bmi > 100) 
+´´´´´´
+arrange(desc(bmi))
+top_n(10)
+geom_histogram(bins = 30)
 
 
 
