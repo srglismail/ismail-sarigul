@@ -56,3 +56,46 @@ filter(complete.cases(.))
 salary_long %>% 
 summarise(mean_wage = mean(wage), SD= sd(wage), N= n(), SEM= SD/sqrt(N))
 ´´´´´´
+
+
+´´´´´´{r}
+n_distinct()
+
+
+#group_by()
+
+Lets calculate mean salary for each occupation:
+
+´´´´´{r}
+salary_long %>% 
+group_by(occupation)
+
+
+´´´´´{r}
+salary_long %>% 
+group_by(occupation, year)
+#just attribute has changed
+
+´´´´´{r}
+salary_long_grouped %>% 
+summarise(mean_wage = mean(wage), SD= sd(wage), N= n(), SEM= SD/sqrt(N))
+´´´´´´
+
+
+
+more grouping variables calculate mean "wind" variable for each status and "category"
+´´´´´{r}
+storms  %>% 
+group_by(status, category) %>% 
+summarise(mean_wind = mean(wind))
+
+
+
+
+
+
+
+
+
+
+
